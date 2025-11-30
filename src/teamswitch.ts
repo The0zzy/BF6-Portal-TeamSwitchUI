@@ -109,14 +109,9 @@ function removeTeamSwitchInteractPoint(eventPlayer: mod.Player | number) {
     playerId = eventPlayer as number;
   }
   if (teamSwitchData[playerId].interactPoint != null) {
-    try {
-      mod.EnableInteractPoint(teamSwitchData[playerId].interactPoint as mod.InteractPoint, false);
-      mod.UnspawnObject(teamSwitchData[playerId].interactPoint as mod.InteractPoint);
-    } catch (error) {
-      // Handle any errors that might occur during removal
-    } finally {
-      teamSwitchData[playerId].interactPoint = null;
-    }
+    mod.EnableInteractPoint(teamSwitchData[playerId].interactPoint as mod.InteractPoint, false);
+    mod.UnspawnObject(teamSwitchData[playerId].interactPoint as mod.InteractPoint);
+    teamSwitchData[playerId].interactPoint = null;
   }
 }
 
@@ -387,8 +382,7 @@ export function OnPlayerLeaveGame(eventNumber: number) {
  * Clean up when player undeployss
  */
 export function OnPlayerUndeploy(eventPlayer: mod.Player) {
-  const playerId = mod.GetObjId(eventPlayer);
-  removeTeamSwitchInteractPoint(playerId);
+  removeTeamSwitchInteractPoint(eventPlayer);
 }
 
 /**
