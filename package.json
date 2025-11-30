@@ -1,0 +1,25 @@
+{
+  "name": "bf6-portal-teamswitchui",
+  "version": "1.0.0",
+  "description": "A generic teamswitch UI for any BF6 custom portal mode",
+  "homepage": "https://bfportal.gg",
+  "bugs": {
+    "url": "https://discord.bfportal.gg"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/The0zzy/BF6-Portal-TeamSwitchUI"
+  },
+  "license": "MIT",
+  "author": "BF Portal Hub Community",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "build": "node ./esbuild.config.mjs",
+    "dev": "node ./esbuild.config.mjs"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.11",
+    "typescript": "^5.9.3"
+  }
+}
